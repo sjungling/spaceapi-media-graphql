@@ -1,9 +1,22 @@
 [build]
-  command = "yarn build"
-  publish = "dist/client"
-  functions = "dist/server"
 
+  # This command builds the site
+  command = "yarn build"
+
+  # This is the directory that will be deployed
+  publish = "dist"
+
+  # This is where our functions are located
+  functions = "dist"
 [[redirects]]
   from = "/"
   to = "/.netlify/functions/graphql"
   status = 200
+
+# [dev]
+#   command = "yarn build"
+#   port = 8888
+#   targetPort = 3000
+#   publish = "dist" 
+#   autoLaunch = true
+#   framework = "#custom"

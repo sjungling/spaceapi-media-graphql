@@ -1,0 +1,27 @@
+{
+    "compilerOptions": {
+      "allowJs": true,
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "pretty": true,
+      "sourceMap": true,
+      "target": "es2017",
+      "outDir": "./dist/graphql",
+      "lib": ["es6"],
+      "resolveJsonModule": true,
+      "types": ["node"],
+      "typeRoots" : ["./node_modules/@types", "src/@types"],
+      "experimentalDecorators": true,
+      "emitDecoratorMetadata": true,
+      "esModuleInterop": true,
+    },
+    "include": [
+      "src/*.ts",
+      "src/**/*.ts",
+    ],
+    "exclude": [
+      "node_modules",
+      "src/**/*.spec.ts",
+      "src/**/*.spec.js"
+    ]
+  }
