@@ -5,9 +5,12 @@
   "author": "Scott Jungling <scott.jungling@build.com>",
   "license": "MIT",
   "scripts": {
+    "prebuild": "yarn generate",
+    "prestart": "yarn generate",
     "build": "netlify-lambda build src/graphql --config ./webpack.config.js",
     "start": "npx --node-arg=--inspect netlify-lambda serve src/graphql --config ./webpack.config.js",
-    "dev": "npx --node-arg=--inspect netlify dev"
+    "dev": "npx --node-arg=--inspect netlify dev",
+    "generate": "graphql-codegen --config codegen.yml"
   },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.12.1",
@@ -15,6 +18,9 @@
     "@babel/plugin-transform-object-assign": "^7.12.1",
     "@babel/preset-env": "^7.12.10",
     "@babel/preset-typescript": "^7.12.7",
+    "@graphql-codegen/cli": "1.19.4",
+    "@graphql-codegen/typescript": "1.19.0",
+    "@graphql-codegen/typescript-resolvers": "1.18.0",
     "@graphql-tools/webpack-loader": "^6.3.1",
     "apollo-datasource-rest": "^0.9.5",
     "apollo-server-lambda": "^2.19.0",
@@ -23,7 +29,6 @@
     "copy-webpack-plugin": "^6.4.0",
     "dotenv": "^8.2.0",
     "graphql": "^15.4.0",
-    "graphql-tools": "^7.0.2",
     "netlify-lambda": "^2.0.1",
     "typescript": "^4.1.3",
     "webpack": "^5.10.1",

@@ -1,7 +1,14 @@
 import { GraphQLScalarType } from "graphql";
 import { Kind } from "graphql/language";
+import {
+  Image,
+  Resolver,
+  Resolvers,
+  ResolverTypeWrapper,
+} from "../@types/resolvers";
+import { NasaResponse, NasaResponseItem } from "./nasa-media-data";
 
-const formatImage = (image) => {
+const formatImage = (image: NasaResponseItem): Partial<Image> => {
   try {
     const { href } = image.links[0];
     const { nasa_id: id, title, description, date_created } = image.data[0];
@@ -17,10 +24,12 @@ const formatImage = (image) => {
     return null;
   }
 };
-export const NasaMediaResolvers = {
+export const NasaMediaResolvers: Resolvers = {
   Query: {
     image: async (_parent, { id }, { dataSources }) => {
-      const response = await dataSources.nasa.getMediaAssetByNasaId(id);
+      const response: NasaResponse = await dataSources.nasa.getMediaAssetByNasaId(
+        id
+      );
       const result = formatImage(response.collection.items[0]);
       return result || null;
     },

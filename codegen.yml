@@ -1,0 +1,10 @@
+overwrite: true
+schema: "src/graphql/nasa-media-schema.graphql"
+generates:
+  src/@types/resolvers.d.ts:
+    config:
+      useIndexSignature: true
+      defaultMapper: Partial<{T}>
+    plugins:
+      - "typescript"
+      - "typescript-resolvers"
