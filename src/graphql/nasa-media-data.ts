@@ -5,17 +5,21 @@ export default class NasaMediaAPI extends RESTDataSource {
     this.baseURL = `https://images-api.nasa.gov/`;
   }
 
-  async getMediaAssetByNasaId(id) {
-    const data = this.get(`search`, {
-      nasa_id: id,
+  async getMediaAssetByNasaId(nasa_id: String) {
+    const data = await this.get(`search`, {
+      nasa_id,
     });
     return data;
   }
-  async searchMedia(query) {
-    const data = this.get(`search`, {
+  async searchMedia(query: String, media_type: String, limit: Number) {
+    const data = await this.get(`search`, {
       q: query,
-      media_type: "image",
+      media_type: media_type.toLowerCase(),
     });
+    return data;
+  }
+  async getAssetByNasaId(nasa_id: String) {
+    const data = await this.get(`asset/${nasa_id}`);
     return data;
   }
 }

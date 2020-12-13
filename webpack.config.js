@@ -13,6 +13,7 @@ module.exports = {
     __filename: false,
     __dirname: true,
   },
+  devtool: "source-map",
   plugins: [
     new CleanWebpackPlugin({ verbose: true }),
     new CopyPlugin({

@@ -1,13 +1,54 @@
 scalar DateTime
+
 type Query {
+  """
+  Find a single media asset by the `id` which is the NASA ID
+  """
   image(id: String!): Image
-  images(query: String!): [Image!]!
+  """
+  Search for all types of media
+  """
+  images(
+    """
+    Text query
+    """
+    query: String!
+    """
+    Optionally apply a filter to certain types of media
+    Default: IMAGE
+    """
+    type: MEDIA_TYPE_ENUM = IMAGE
+    """
+    Limit the number of results
+    Default: 10
+    """
+    limit: Int = 10
+  ): [Image!]!
 }
 
 type Image {
   id: ID!
-  url: String!
+  href: String!
   title: String!
   description: String!
   created_at: DateTime
+  variations(variant: IMAGE_VARIATION_ENUM! = THUMB): ImageVariation!
+}
+
+type ImageVariation {
+  id: ID!
+  href: String!
+  variation: IMAGE_VARIATION_ENUM
+}
+
+enum IMAGE_VARIATION_ENUM {
+  ORIG
+  LARGE
+  MEDIUM
+  SMALL
+  THUMB
+}
+enum MEDIA_TYPE_ENUM {
+  IMAGE
+  AUDIO
 }

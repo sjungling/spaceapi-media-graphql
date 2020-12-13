@@ -3,12 +3,11 @@ import { Kind } from "graphql/language";
 
 const formatImage = (image) => {
   try {
-    const { href: url } = image.links[0];
+    const { href } = image.links[0];
     const { nasa_id: id, title, description, date_created } = image.data[0];
-
     return {
       id,
-      url,
+      href,
       title,
       description,
       created_at: date_created,
@@ -25,12 +24,28 @@ export const NasaMediaResolvers = {
       const result = formatImage(response.collection.items[0]);
       return result || null;
     },
-    images: async (parent, { query }, { dataSources }) => {
-      const response = await dataSources.nasa.searchMedia(query);
+    images: async (_parent, { query, type, limit }, { dataSources }) => {
+      if (type === "AUDIO")
+        throw new Error("Audio results are not yet supported");
+      const response = await dataSources.nasa.searchMedia(query, type, limit);
       const results = response.collection.items
+        .slice(0, limit ?? -1)
         .map((image) => formatImage(image))
         .filter(Boolean);
       return results || [];
+    },
+  },
+  Image: {
+    variations: async (parent, { variant }, { dataSources }) => {
+      const response = await dataSources.nasa.getAssetByNasaId(parent.id);
+      const { href } = response.collection.items
+        .filter(({ href }) => href.indexOf(variant.toLowerCase()) > 0)
+        .pop();
+      return {
+        id: [parent.id, variant].join("-"),
+        href,
+        variation: variant,
+      };
     },
   },
   DateTime: new GraphQLScalarType({
