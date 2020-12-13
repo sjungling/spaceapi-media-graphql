@@ -13,6 +13,9 @@ const server = new ApolloServer({
   dataSources: () => ({
     nasa: new NasaMediaAPI(),
   }),
+  cacheControl: {
+    defaultMaxAge: 60 * 60,
+  },
 });
 
 export const handler = server.createHandler();

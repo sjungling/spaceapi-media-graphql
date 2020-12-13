@@ -1,8 +1,7 @@
 {
-  "name": "nasa-gql",
+  "name": "nasa-media-gql",
   "version": "1.0.0",
-  "main": "index.js",
-  "author": "Scott Jungling <scott.jungling@build.com>",
+  "author": "Scott Jungling <scott.jungling@gmail.com>",
   "license": "MIT",
   "scripts": {
     "prebuild": "yarn generate",
