@@ -5,6 +5,7 @@ generates:
     config:
       useIndexSignature: true
       defaultMapper: Partial<{T}>
+      federation: true
     plugins:
       - "typescript"
       - "typescript-resolvers"
