@@ -13,11 +13,8 @@
   to = "/.netlify/functions/graphql"
   status = 200
 
-[[headers]]
-  # Define which paths this specific [[headers]] block will cover.
-  for = "/*"
-    [headers.values]
-      Access-Control-Allow-Origin = "*"
-      Access-Control-Allow-Methods = "GET,OPTIONS,PATCH,DELETE,POST,PUT"
-      Access-Control-Allow-Headers = "*"
-      Access-Control-Allow-Credentials = "true"
+  [redirects.headers]
+   Access-Control-Allow-Origin = "*"
+   Access-Control-Allow-Methods = "GET,OPTIONS,PATCH,DELETE,POST,PUT"
+   Access-Control-Allow-Headers = "*"
+   Access-Control-Allow-Credentials = "true"
