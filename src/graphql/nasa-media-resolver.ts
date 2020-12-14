@@ -56,6 +56,10 @@ export const NasaMediaResolvers: Resolvers = {
         variation: variant,
       };
     },
+    __resolveReference: async (image, { dataSources }) => {
+      const response = await dataSources.nasa.getAssetByNasaId(image.id);
+      return response;
+    },
   },
   DateTime: new GraphQLScalarType({
     name: "DateTime",
