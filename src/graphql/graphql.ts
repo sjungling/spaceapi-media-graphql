@@ -22,4 +22,11 @@ const server = new ApolloServer({
   },
 });
 
-export const handler = server.createHandler();
+export const handler = server.createHandler({
+  cors: {
+    origin: "*",
+    methods: "GET,OPTIONS,PATCH,DELETE,POST,PUT",
+    allowedHeaders: "*",
+    credentials: true,
+  },
+});
