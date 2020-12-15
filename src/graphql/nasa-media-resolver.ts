@@ -1,16 +1,7 @@
 import { GraphQLScalarType } from "graphql";
 import { Kind } from "graphql/language";
-import {
-  Image,
-  Resolver,
-  Resolvers,
-  ResolverTypeWrapper,
-} from "../@types/resolvers";
-import {
-  NasaResponse,
-  NasaResponseItem,
-  NasaSearchInput,
-} from "./nasa-media-data";
+import { Image, Resolvers } from "../@types/resolvers";
+import { NasaResponse, NasaResponseItem } from "./nasa-media-data";
 
 const formatImage = (image: NasaResponseItem): Partial<Image> => {
   try {
