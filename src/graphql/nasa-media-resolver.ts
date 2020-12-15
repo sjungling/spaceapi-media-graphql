@@ -6,7 +6,11 @@ import {
   Resolvers,
   ResolverTypeWrapper,
 } from "../@types/resolvers";
-import { NasaResponse, NasaResponseItem } from "./nasa-media-data";
+import {
+  NasaResponse,
+  NasaResponseItem,
+  NasaSearchInput,
+} from "./nasa-media-data";
 
 const formatImage = (image: NasaResponseItem): Partial<Image> => {
   try {
@@ -62,13 +66,8 @@ export const NasaMediaResolvers: Resolvers = {
     },
   },
   Mission: {
-    images: async ({ mission }, _args, { dataSources }) => {
-      const limit = 10;
-      const response = await dataSources.nasa.searchMedia(
-        mission,
-        "IMAGES",
-        limit
-      );
+    images: async ({ mission }, { media_type, limit }, { dataSources }) => {
+      const response = await dataSources.nasa.searchMedia(mission, media_type);
       const results = response.collection.items
         .slice(0, limit ?? -1)
         .map((image) => formatImage(image))

@@ -73,6 +73,6 @@ enum MEDIA_TYPE_ENUM {
 }
 
 extend type Mission @key(fields: "mission") {
-  mission: String @external
-  images: [Image!]!
+  mission: String! @external
+  images(media_type: MEDIA_TYPE_ENUM = IMAGE, limit: Int = 10): [Image!]!
 }

@@ -6572,6 +6572,11 @@ netlify-lambda@^2.0.1:
     webpack "^4.43.0"
     webpack-merge "^4.2.2"
 
+netlify-plugin-contextual-env@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/netlify-plugin-contextual-env/-/netlify-plugin-contextual-env-0.3.0.tgz#4b8dc481df4a0e224317f37c000144847e54c1f2"
+  integrity sha512-BLOioDgLBVYW578HnoykjWiKu2pti2PWGCyv3xZp/JwgTFEItkXSnOSlCxRS7HaUDf6HI6vnDU0E+5gFAOnqLQ==
+
 nice-try@^1.0.4:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/nice-try/-/nice-try-1.0.5.tgz#a3378a7696ce7d223e88fc9b764bd7ef1089e366"
