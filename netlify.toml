@@ -1,14 +1,18 @@
 [build]
+# This command builds the site
+command = "yarn build"
+# This is the directory that will be deployed
+publish = "dist"
+# This is where our functions are located
+functions = "dist"
 
-  # This command builds the site
-  command = "yarn build"
-
-  # This is the directory that will be deployed
-  publish = "dist"
-
-  # This is where our functions are located
-  functions = "dist"
 [[redirects]]
-  from = "/"
-  to = "/.netlify/functions/graphql"
-  status = 200
+from = "/"
+to = "/.netlify/functions/graphql"
+status = 200
+
+[[plugins]]
+package = 'netlify-plugin-contextual-env'
+
+[plugins.inputs]
+mode = 'prefix'

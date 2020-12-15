@@ -61,6 +61,21 @@ export const NasaMediaResolvers: Resolvers = {
       return response;
     },
   },
+  Mission: {
+    images: async ({ mission }, _args, { dataSources }) => {
+      const limit = 10;
+      const response = await dataSources.nasa.searchMedia(
+        mission,
+        "IMAGES",
+        limit
+      );
+      const results = response.collection.items
+        .slice(0, limit ?? -1)
+        .map((image) => formatImage(image))
+        .filter(Boolean);
+      return results || [];
+    },
+  },
   DateTime: new GraphQLScalarType({
     name: "DateTime",
     description: "Date custom scalar type",
