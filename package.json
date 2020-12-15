@@ -30,6 +30,7 @@
     "dotenv": "^8.2.0",
     "graphql": "^15.4.0",
     "netlify-lambda": "^2.0.1",
+    "netlify-plugin-contextual-env": "^0.3.0",
     "typescript": "^4.1.3",
     "webpack": "^5.10.1",
     "webpack-cli": "^4.2.0",

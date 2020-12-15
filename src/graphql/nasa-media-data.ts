@@ -21,6 +21,7 @@ export type NasaResponseItem = {
     }
   ];
 };
+
 export default class NasaMediaAPI extends RESTDataSource {
   constructor() {
     super();
@@ -33,7 +34,7 @@ export default class NasaMediaAPI extends RESTDataSource {
     });
     return data;
   }
-  async searchMedia(query: String, media_type: Media_Type_Enum, limit: Number) {
+  async searchMedia(query: string, media_type: Media_Type_Enum) {
     const data = await this.get(`search`, {
       q: query,
       media_type: media_type.toLowerCase(),

@@ -71,3 +71,8 @@ enum MEDIA_TYPE_ENUM {
   IMAGE
   AUDIO
 }
+
+extend type Mission @key(fields: "mission") {
+  mission: String! @external
+  images(type: MEDIA_TYPE_ENUM = IMAGE, limit: Int = 10): [Image!]!
+}
