@@ -19,6 +19,7 @@ const formatImage = (image: NasaResponseItem): Partial<Image> => {
     return null;
   }
 };
+
 export const NasaMediaResolvers: Resolvers = {
   Query: {
     image: async (_parent, { id }, { dataSources }) => {
@@ -31,7 +32,7 @@ export const NasaMediaResolvers: Resolvers = {
     images: async (_parent, { query, type, limit }, { dataSources }) => {
       if (type === "AUDIO")
         throw new Error("Audio results are not yet supported");
-      const response = await dataSources.nasa.searchMedia(query, type, limit);
+      const response = await dataSources.nasa.searchMedia(query, type);
       const results = response.collection.items
         .slice(0, limit ?? -1)
         .map((image) => formatImage(image))
@@ -57,8 +58,10 @@ export const NasaMediaResolvers: Resolvers = {
     },
   },
   Mission: {
-    images: async ({ mission }, { media_type, limit }, { dataSources }) => {
-      const response = await dataSources.nasa.searchMedia(mission, media_type);
+    images: async ({ mission }, { type, limit }, { dataSources }) => {
+      if (type === "AUDIO")
+        throw new Error("Audio results are not yet supported");
+      const response = await dataSources.nasa.searchMedia(mission, type);
       const results = response.collection.items
         .slice(0, limit ?? -1)
         .map((image) => formatImage(image))
