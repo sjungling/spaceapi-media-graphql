@@ -73,6 +73,14 @@ enum MEDIA_TYPE_ENUM {
 }
 
 extend type Mission @key(fields: "mission") {
+  # Required field - `@external`  as it is provided by `Mission` service and the primary key
   mission: String! @external
+  # Required field - `@external`  as it is provided by `Mission` service and used for additional search parameters
+  launchDate: DateTime! @external
+  """
+  Images from NASA Image Archives
+  @requires `launchDate` from `Mission` in order to filter results to year of launch
+  """
   images(type: MEDIA_TYPE_ENUM = IMAGE, limit: Int = 10): [Image!]!
+    @requires(fields: "launchDate")
 }
