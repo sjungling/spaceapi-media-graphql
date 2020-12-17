@@ -1,6 +1,6 @@
 import { ApolloServer } from "apollo-server-lambda";
 import { buildFederatedSchema } from "@apollo/federation";
-
+import { ApolloServerPluginInlineTrace } from "apollo-server-core";
 import NasaMediaAPI from "./nasa-media-data";
 import { NasaMediaResolvers } from "./nasa-media-resolver";
 import NasaMediaSchema from "./nasa-media-schema.graphql";
@@ -20,6 +20,7 @@ const server = new ApolloServer({
   cacheControl: {
     defaultMaxAge: 60 * 60,
   },
+  plugins: [ApolloServerPluginInlineTrace()],
 });
 
 export const handler = server.createHandler({
