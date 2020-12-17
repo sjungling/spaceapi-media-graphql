@@ -34,11 +34,22 @@ export default class NasaMediaAPI extends RESTDataSource {
     });
     return data;
   }
-  async searchMedia(query: string, media_type: Media_Type_Enum) {
-    const data = await this.get(`search`, {
+  async searchMedia(
+    query: string,
+    media_type: Media_Type_Enum,
+    date_range?: { start: string; end: string }
+  ) {
+    let queryParameters = {
       q: query,
       media_type: media_type.toLowerCase(),
-    });
+    };
+    if (date_range) {
+      queryParameters = Object.assign(queryParameters, {
+        year_start: new Date(date_range.start).getFullYear(),
+        year_end: new Date(date_range.end).getFullYear(),
+      });
+    }
+    const data = await this.get(`search`, queryParameters);
     return data;
   }
   async getAssetByNasaId(nasa_id: String) {

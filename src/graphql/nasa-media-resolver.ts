@@ -58,10 +58,18 @@ export const NasaMediaResolvers: Resolvers = {
     },
   },
   Mission: {
-    images: async ({ mission }, { type, limit }, { dataSources }) => {
+    images: async (
+      { mission, launchDate },
+      { type, limit },
+      { dataSources }
+    ) => {
       if (type === "AUDIO")
         throw new Error("Audio results are not yet supported");
-      const response = await dataSources.nasa.searchMedia(mission, type);
+
+      const response = await dataSources.nasa.searchMedia(mission, type, {
+        start: launchDate,
+        end: launchDate,
+      });
       const results = response.collection.items
         .slice(0, limit ?? -1)
         .map((image) => formatImage(image))
