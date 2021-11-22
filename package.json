@@ -23,7 +23,7 @@
     "@graphql-codegen/typescript": "1.19.0",
     "@graphql-codegen/typescript-resolvers": "1.18.0",
     "@graphql-tools/webpack-loader": "^6.6.1",
-    "apollo-datasource-rest": "^0.9.5",
+    "apollo-datasource-rest": "^3.4.0",
     "apollo-server-lambda": "^2.19.0",
     "babel-cli": "^6.26.0",
     "clean-webpack-plugin": "^3.0.0",
