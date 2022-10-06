@@ -7,8 +7,8 @@
     "prebuild": "yarn generate",
     "prestart": "yarn generate",
     "build": "netlify-lambda build src/graphql --config ./webpack.config.js",
-    "start": "npx --node-arg=--inspect netlify-lambda -p 8888 serve src/graphql --config ./webpack.config.js",
-    "dev": "npx --node-arg=--inspect netlify dev",
+    "start": "npx netlify-lambda -p 8888 serve src/graphql --config ./webpack.config.js",
+    "dev": "npx netlify dev",
     "generate": "graphql-codegen --config codegen.yml",
     "format": "prettier -w 'src/**/*.{ts,tsx,graphql,yml,json}' '**/*.md'"
   },

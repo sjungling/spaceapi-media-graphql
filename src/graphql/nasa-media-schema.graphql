@@ -72,9 +72,9 @@ enum MEDIA_TYPE_ENUM {
   AUDIO
 }
 
-extend type Mission @key(fields: "mission") {
+type Mission @key(fields: "mission") {
   # Required field - `@external`  as it is provided by `Mission` service and the primary key
-  mission: String! @external
+  mission: String!
   # Required field - `@external`  as it is provided by `Mission` service and used for additional search parameters
   launchDate: DateTime! @external
   """
