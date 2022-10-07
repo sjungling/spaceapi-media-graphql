@@ -10,7 +10,7 @@
     "@jridgewell/gen-mapping" "^0.1.0"
     "@jridgewell/trace-mapping" "^0.3.9"
 
-"@apollo/federation@^0.20.7":
+"@apollo/federation@0.20.7":
   version "0.20.7"
   resolved "https://registry.yarnpkg.com/@apollo/federation/-/federation-0.20.7.tgz#0d26dcc3bbc92c168dc40d4f407f56d26338ef7a"
   integrity sha512-URIayksqBaJ+xlcJmyGCf+OqHP60lX2CYGv9fDWQ1KM48sEN1ABHGXkEa0vwgWMH0XUVo94lYDVY11BAJUsuCw==
@@ -2695,7 +2695,7 @@ apollo-cache-control@^0.11.4:
     apollo-server-env "^2.4.5"
     apollo-server-plugin-base "^0.10.2"
 
-apollo-datasource-rest@^3.6.1:
+apollo-datasource-rest@3.6.1:
   version "3.6.1"
   resolved "https://registry.yarnpkg.com/apollo-datasource-rest/-/apollo-datasource-rest-3.6.1.tgz#0975c5c8dfd1d2cbda58af268b9029451af8858e"
   integrity sha512-3RMM48DKva01YrmPYpiBdtva7r9pJkgrMz7BuwAdhF2RXU9WhgOwZvUUZHqi+8ARNGRjVZA5BdCcEt8lIbYhOA==
@@ -2821,7 +2821,7 @@ apollo-server-errors@^3.3.1:
   resolved "https://registry.yarnpkg.com/apollo-server-errors/-/apollo-server-errors-3.3.1.tgz#ba5c00cdaa33d4cbd09779f8cb6f47475d1cd655"
   integrity sha512-xnZJ5QWs6FixHICXHxUfm+ZWqqxrNuPlQ+kj5m6RtEgIpekOPssH/SD9gf2B4HuWV0QozorrygwZnux8POvyPA==
 
-apollo-server-lambda@^2.19.0:
+apollo-server-lambda@2.19.0:
   version "2.19.0"
   resolved "https://registry.yarnpkg.com/apollo-server-lambda/-/apollo-server-lambda-2.19.0.tgz#63d114bd095ca6d2958e1d05f0c0ed9d23cfd61b"
   integrity sha512-44W6QaHMnVsKKXtC0o04JR0U65hoUC7Pfj3ik1PThsGejHVByyaQi7Qfbas3vuMAxU0UGkF5TKycc7K6KFxGUw==
