@@ -10,7 +10,8 @@
     "start": "npx netlify-lambda -p 8888 serve src/graphql --config ./webpack.config.js",
     "dev": "npx netlify dev",
     "generate": "graphql-codegen --config codegen.yml",
-    "format": "prettier -w 'src/**/*.{ts,tsx,graphql,yml,json}' '**/*.md'"
+    "format": "prettier -w 'src/**/*.{ts,tsx,graphql,yml,json}' '**/*.md'",
+    "check:all": "yarn format"
   },
   "devDependencies": {
     "@apollo/federation": "0.20.7",
