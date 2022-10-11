@@ -14,7 +14,7 @@
     "check:all": "yarn format"
   },
   "devDependencies": {
-    "@apollo/federation": "0.20.7",
+    "@apollo/federation": "0.37.1",
     "@babel/plugin-proposal-class-properties": "7.18.6",
     "@babel/plugin-proposal-object-rest-spread": "7.19.4",
     "@babel/plugin-transform-object-assign": "7.18.6",

@@ -10,15 +10,38 @@
     "@jridgewell/gen-mapping" "^0.1.0"
     "@jridgewell/trace-mapping" "^0.3.9"
 
-"@apollo/federation@0.20.7":
-  version "0.20.7"
-  resolved "https://registry.yarnpkg.com/@apollo/federation/-/federation-0.20.7.tgz#0d26dcc3bbc92c168dc40d4f407f56d26338ef7a"
-  integrity sha512-URIayksqBaJ+xlcJmyGCf+OqHP60lX2CYGv9fDWQ1KM48sEN1ABHGXkEa0vwgWMH0XUVo94lYDVY11BAJUsuCw==
+"@apollo/cache-control-types@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@apollo/cache-control-types/-/cache-control-types-1.0.2.tgz#f42ed3563acc7f1f50617d65d208483977adc68e"
+  integrity sha512-Por80co1eUm4ATsvjCOoS/tIR8PHxqVjsA6z76I6Vw0rFn4cgyVElQcmQDIZiYsy41k8e5xkrMRECkM2WR8pNw==
+
+"@apollo/federation@0.37.1":
+  version "0.37.1"
+  resolved "https://registry.yarnpkg.com/@apollo/federation/-/federation-0.37.1.tgz#526e6be32cd012b15734738d5e060e641df5bbbc"
+  integrity sha512-cLoBrBLt2dUEUmfISvGJ9YevnRGWhj+bVVJ8pP0bBrLfy1GWRYrsV8Jd87U2YeMEp7wuYM6M2PjE4Oy6PBMf2w==
   dependencies:
-    apollo-graphql "^0.6.0"
-    apollo-server-env "^2.4.5"
-    core-js "^3.4.0"
+    "@apollo/subgraph" "^0.5.1"
+    apollo-server-types "^3.0.2"
     lodash.xorby "^4.7.0"
+
+"@apollo/protobufjs@1.2.6":
+  version "1.2.6"
+  resolved "https://registry.yarnpkg.com/@apollo/protobufjs/-/protobufjs-1.2.6.tgz#d601e65211e06ae1432bf5993a1a0105f2862f27"
+  integrity sha512-Wqo1oSHNUj/jxmsVp4iR3I480p6qdqHikn38lKrFhfzcDJ7lwd7Ck7cHRl4JE81tWNArl77xhnG/OkZhxKBYOw==
+  dependencies:
+    "@protobufjs/aspromise" "^1.1.2"
+    "@protobufjs/base64" "^1.1.2"
+    "@protobufjs/codegen" "^2.0.4"
+    "@protobufjs/eventemitter" "^1.1.0"
+    "@protobufjs/fetch" "^1.1.0"
+    "@protobufjs/float" "^1.0.2"
+    "@protobufjs/inquire" "^1.1.0"
+    "@protobufjs/path" "^1.1.2"
+    "@protobufjs/pool" "^1.1.0"
+    "@protobufjs/utf8" "^1.1.0"
+    "@types/long" "^4.0.0"
+    "@types/node" "^10.1.0"
+    long "^4.0.0"
 
 "@apollo/protobufjs@^1.0.3":
   version "1.0.5"
@@ -38,6 +61,13 @@
     "@types/long" "^4.0.0"
     "@types/node" "^10.1.0"
     long "^4.0.0"
+
+"@apollo/subgraph@^0.5.1":
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/@apollo/subgraph/-/subgraph-0.5.1.tgz#9d9aabe69bc61e13a510c19f50c6aa6e741a6ec4"
+  integrity sha512-pj+igKgdpmTfgUmscTNuVdLip8WZ8jFKS5FGb/tD2hj4xPwaQ+MfszLsuNfoytp7d63PdLorIndxcHCW+rb7Dg==
+  dependencies:
+    "@apollo/cache-control-types" "^1.0.2"
 
 "@apollo/utils.keyvaluecache@^1.0.1":
   version "1.0.1"
@@ -3124,6 +3154,13 @@ apollo-reporting-protobuf@^0.6.1:
   dependencies:
     "@apollo/protobufjs" "^1.0.3"
 
+apollo-reporting-protobuf@^3.3.3:
+  version "3.3.3"
+  resolved "https://registry.yarnpkg.com/apollo-reporting-protobuf/-/apollo-reporting-protobuf-3.3.3.tgz#df2b7ff73422cd682af3f1805d32301aefdd9e89"
+  integrity sha512-L3+DdClhLMaRZWVmMbBcwl4Ic77CnEBPXLW53F7hkYhkaZD88ivbCVB1w/x5gunO6ZHrdzhjq0FHmTsBvPo7aQ==
+  dependencies:
+    "@apollo/protobufjs" "1.2.6"
+
 apollo-server-caching@^0.5.2:
   version "0.5.2"
   resolved "https://registry.yarnpkg.com/apollo-server-caching/-/apollo-server-caching-0.5.2.tgz#bef5d5e0d48473a454927a66b7bb947a0b6eb13e"
@@ -3215,6 +3252,16 @@ apollo-server-types@^0.6.1:
     apollo-reporting-protobuf "^0.6.1"
     apollo-server-caching "^0.5.2"
     apollo-server-env "^2.4.5"
+
+apollo-server-types@^3.0.2:
+  version "3.6.3"
+  resolved "https://registry.yarnpkg.com/apollo-server-types/-/apollo-server-types-3.6.3.tgz#7818cab914c865dafa53ea263ca6cb1854b4f05a"
+  integrity sha512-+7caNTLdevpWI2dGKSa7CWdyudO3NBuJ3HzcrYxjBei6Bth9YdRUNzPSFmBjlm2baHF0GsrMwLpjO+HStJzm3A==
+  dependencies:
+    "@apollo/utils.keyvaluecache" "^1.0.1"
+    "@apollo/utils.logger" "^1.0.0"
+    apollo-reporting-protobuf "^3.3.3"
+    apollo-server-env "^4.2.1"
 
 apollo-tracing@^0.12.0:
   version "0.12.0"
@@ -4571,7 +4618,7 @@ core-js@^2.4.0, core-js@^2.5.0:
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.12.tgz#d9333dfa7b065e347cc5682219d6f690859cc2ec"
   integrity sha512-Kb2wC0fvsWfQrgk8HU5lW6U/Lcs8+9aaYcy4ZFc6DDlo4nZ7n70dEgE5rtR0oG6ufKDUnrwfWL1mXR5ljDatrQ==
 
-core-js@^3.0.1, core-js@^3.4.0:
+core-js@^3.0.1:
   version "3.8.1"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.8.1.tgz#f51523668ac8a294d1285c3b9db44025fda66d47"
   integrity sha512-9Id2xHY1W7m8hCl8NkhQn5CufmF/WuR30BTRewvCXc1aZd3kMECwNZ69ndLbekKfakw9Rf2Xyc+QR6E7Gg+obg==
