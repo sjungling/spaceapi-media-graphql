@@ -15,12 +15,12 @@
   resolved "https://registry.yarnpkg.com/@apollo/cache-control-types/-/cache-control-types-1.0.2.tgz#f42ed3563acc7f1f50617d65d208483977adc68e"
   integrity sha512-Por80co1eUm4ATsvjCOoS/tIR8PHxqVjsA6z76I6Vw0rFn4cgyVElQcmQDIZiYsy41k8e5xkrMRECkM2WR8pNw==
 
-"@apollo/federation@0.37.1":
-  version "0.37.1"
-  resolved "https://registry.yarnpkg.com/@apollo/federation/-/federation-0.37.1.tgz#526e6be32cd012b15734738d5e060e641df5bbbc"
-  integrity sha512-cLoBrBLt2dUEUmfISvGJ9YevnRGWhj+bVVJ8pP0bBrLfy1GWRYrsV8Jd87U2YeMEp7wuYM6M2PjE4Oy6PBMf2w==
+"@apollo/federation@0.38.1":
+  version "0.38.1"
+  resolved "https://registry.yarnpkg.com/@apollo/federation/-/federation-0.38.1.tgz#0b8a9b4cbf5ebfa3106c20c47ec1f33cf92102a0"
+  integrity sha512-miifyAEsFgiYKeM3lUHFH6+vKa2vm9dXKSyWVpX6oeJiPblFLe2/iByN3psZQO2sRdVqO1OKYrGXdgKc74XDKw==
   dependencies:
-    "@apollo/subgraph" "^0.5.1"
+    "@apollo/subgraph" "^0.6.1"
     apollo-server-types "^3.0.2"
     lodash.xorby "^4.7.0"
 
@@ -43,10 +43,10 @@
     "@types/node" "^10.1.0"
     long "^4.0.0"
 
-"@apollo/subgraph@^0.5.1":
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/@apollo/subgraph/-/subgraph-0.5.1.tgz#9d9aabe69bc61e13a510c19f50c6aa6e741a6ec4"
-  integrity sha512-pj+igKgdpmTfgUmscTNuVdLip8WZ8jFKS5FGb/tD2hj4xPwaQ+MfszLsuNfoytp7d63PdLorIndxcHCW+rb7Dg==
+"@apollo/subgraph@^0.6.1":
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/@apollo/subgraph/-/subgraph-0.6.1.tgz#18f496f496ecf42d0eb372ab1d2d457d30e5a76e"
+  integrity sha512-w/6FoubSxuzXSx8uvLE1wEuHZVHRXFyfHPKdM76wX5U/xw82zlUKseVO7wTuVODTcnUzEA30udYeCApUoC3/Xw==
   dependencies:
     "@apollo/cache-control-types" "^1.0.2"
 
