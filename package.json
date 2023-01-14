@@ -28,7 +28,7 @@
     "apollo-datasource-rest": "3.7.0",
     "apollo-server-lambda": "3.11.1",
     "babel-cli": "6.26.0",
-    "clean-webpack-plugin": "3.0.0",
+    "clean-webpack-plugin": "4.0.0",
     "copy-webpack-plugin": "6.4.1",
     "dotenv": "16.0.3",
     "graphql": "16.6.0",
